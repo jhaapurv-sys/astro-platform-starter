@@ -1,21 +1,124 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ContextAlert from '../components/ContextAlert.astro';
-import Markdown from '../components/Markdown.astro';
-
-const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
-
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
-`;
 ---
 
-<Layout title="Welcome to Astro.">
-    <ContextAlert class="mb-8" />
-    <h1 class="mb-10">Netlify Platform Starter for Astro</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
-    <p>
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg sm:min-w-64">Read the Docs</a>
-    </p>
+<Layout title="AstroApurv – Logical Vedic Astrology">
+    <div class="space-y-20 py-12">
+        <section id="hero" class="text-center py-16">
+            <h1 class="text-5xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-yellow-400 bg-clip-text text-transparent">
+                AstroApurv
+            </h1>
+            <p class="text-2xl sm:text-3xl mb-8 text-gray-200">
+                Decode Karma Through Logic
+            </p>
+            <a href="#contact" class="btn btn-lg">Book a Consultation</a>
+        </section>
+
+        <section id="about" class="max-w-3xl mx-auto">
+            <h2 class="mb-6 text-center text-primary">About</h2>
+            <div class="text-lg text-gray-200 space-y-4">
+                <p>
+                    Welcome to AstroApurv, where ancient Vedic wisdom meets modern logical thinking. 
+                    Founded by <strong>Apurv Jha</strong>, a dedicated Vedic astrologer who believes that 
+                    the stars and planets don't just predict our future—they reveal the intricate patterns 
+                    of karma woven into our lives.
+                </p>
+                <p>
+                    Apurv's approach is unique: combining deep knowledge of Vedic astrology with rational 
+                    analysis and planetary psychology. Every chart reading is more than just a forecast; 
+                    it's a journey into understanding your karmic blueprint, helping you make informed 
+                    decisions aligned with your true path.
+                </p>
+                <p>
+                    Whether you're seeking clarity on career choices, relationships, or personal growth, 
+                    AstroApurv offers insights grounded in logic, compassion, and cosmic wisdom.
+                </p>
+            </div>
+        </section>
+
+        <section id="services" class="max-w-4xl mx-auto">
+            <h2 class="mb-12 text-center text-primary">Services</h2>
+            <div class="grid gap-8 sm:grid-cols-2">
+                <div class="bg-accent/30 rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-colors">
+                    <h3 class="text-xl font-bold mb-3 text-primary">Birth Chart Reading</h3>
+                    <p class="text-gray-200">
+                        Comprehensive analysis of your natal chart to understand your strengths, challenges, 
+                        and karmic patterns. Discover the cosmic blueprint that shapes your destiny.
+                    </p>
+                </div>
+
+                <div class="bg-accent/30 rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-colors">
+                    <h3 class="text-xl font-bold mb-3 text-primary">Career Guidance</h3>
+                    <p class="text-gray-200">
+                        Get clear insights on career paths, professional growth, and timing for important 
+                        decisions. Align your work with your planetary strengths.
+                    </p>
+                </div>
+
+                <div class="bg-accent/30 rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-colors">
+                    <h3 class="text-xl font-bold mb-3 text-primary">Relationship Compatibility</h3>
+                    <p class="text-gray-200">
+                        Understand relationship dynamics through planetary positions. Explore compatibility 
+                        with partners, family, or business associates with logical precision.
+                    </p>
+                </div>
+
+                <div class="bg-accent/30 rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-colors">
+                    <h3 class="text-xl font-bold mb-3 text-primary">Dasha & Transit Analysis</h3>
+                    <p class="text-gray-200">
+                        Navigate life's changing phases with confidence. Learn when to act and when to wait 
+                        based on planetary periods and transits affecting your chart.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="max-w-2xl mx-auto">
+            <h2 class="mb-8 text-center text-primary">Contact</h2>
+            <form name="contact" method="POST" data-netlify="true" class="space-y-6">
+                <input type="hidden" name="form-name" value="contact" />
+                
+                <div>
+                    <label for="name" class="block text-sm font-medium mb-2 text-gray-200">Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required 
+                        class="w-full px-4 py-3 rounded bg-accent/50 border border-primary/20 focus:border-primary focus:outline-none text-white"
+                    />
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium mb-2 text-gray-200">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        class="w-full px-4 py-3 rounded bg-accent/50 border border-primary/20 focus:border-primary focus:outline-none text-white"
+                    />
+                </div>
+
+                <div>
+                    <label for="message" class="block text-sm font-medium mb-2 text-gray-200">Message</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        required 
+                        rows="5" 
+                        class="w-full px-4 py-3 rounded bg-accent/50 border border-primary/20 focus:border-primary focus:outline-none text-white"
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-lg w-full sm:w-auto">Send Message</button>
+            </form>
+        </section>
+    </div>
 </Layout>
+
+<style>
+    section {
+        scroll-margin-top: 2rem;
+    }
+</style>
